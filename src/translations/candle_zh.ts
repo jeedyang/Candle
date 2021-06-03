@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="ru_RU">
+<TS version="2.1" language="zh_ZH">
 <context>
     <name>GCodeTableModel</name>
     <message>
@@ -11,72 +11,72 @@
     <message>
         <location filename="../tables/gcodetablemodel.cpp" line="9"/>
         <source>Command</source>
-        <translation>Команда</translation>
+        <translation>命令</translation>
     </message>
     <message>
         <location filename="../tables/gcodetablemodel.cpp" line="9"/>
         <source>State</source>
-        <translation>Состояние</translation>
+        <translation>状态</translation>
     </message>
     <message>
         <location filename="../tables/gcodetablemodel.cpp" line="9"/>
         <source>Response</source>
-        <translation>Ответ</translation>
+        <translation>相应</translation>
     </message>
     <message>
         <location filename="../tables/gcodetablemodel.cpp" line="9"/>
         <source>Args</source>
-        <translation>Аргументы</translation>
+        <translation>参数</translation>
     </message>
     <message>
         <location filename="../tables/gcodetablemodel.cpp" line="26"/>
         <source>In queue</source>
-        <translation>В очереди</translation>
+        <translation>在列队中</translation>
     </message>
     <message>
         <location filename="../tables/gcodetablemodel.cpp" line="27"/>
         <source>Sent</source>
-        <translation>Отправлена</translation>
+        <translation>发送</translation>
     </message>
     <message>
         <location filename="../tables/gcodetablemodel.cpp" line="28"/>
         <source>Processed</source>
-        <translation>Обработана</translation>
+        <translation>处理</translation>
     </message>
     <message>
         <location filename="../tables/gcodetablemodel.cpp" line="29"/>
         <source>Skipped</source>
-        <translation>Пропущена</translation>
+        <translation>跳过</translation>
     </message>
     <message>
         <location filename="../tables/gcodetablemodel.cpp" line="31"/>
         <source>Unknown</source>
-        <translation>Неизвестно</translation>
+        <translation>未知</translation>
     </message>
     <message>
         <source>Status</source>
-        <translation type="vanished">Статус</translation>
+        <translation type="vanished">状态</translation>
     </message>
     <message>
         <location filename="../tables/gcodetablemodel.cpp" line="9"/>
         <source>Line</source>
-        <translation>Строка</translation>
+        <translation>线</translation>
     </message>
 </context>
 <context>
     <name>GLWidget</name>
     <message>
         <source>Lines: %1</source>
-        <translation type="vanished">Сегменты: %1</translation>
+        <translation type="vanished">线: %1</translation>
     </message>
     <message>
         <source>Segments: %1</source>
-        <translation type="vanished">Сегменты: %1</translation>
+        <translation type="vanished">分段数: %1</translation>
     </message>
     <message>
         <location filename="../widgets/glwidget.cpp" line="495"/>
         <source>Vertices: %1</source>
-        <translation>Вершины: %1</translation>
+        <translation>顶点: %1</translation>
     </message>
 </context>
 <context>
@@ -142,42 +142,42 @@
         <location filename="../frmmain.ui" line="137"/>
         <location filename="../frmmain.cpp" line="696"/>
         <source>G-code program</source>
-        <translation>G-code программа</translation>
+        <translation>G-code 程序</translation>
     </message>
     <message>
         <location filename="../frmmain.ui" line="167"/>
         <source>Isometric view</source>
-        <translation>Изометрия</translation>
+        <translation>等距视图</translation>
     </message>
     <message>
         <location filename="../frmmain.ui" line="193"/>
         <source>Top view</source>
-        <translation>Вид сверху</translation>
+        <translation>顶视图</translation>
     </message>
     <message>
         <location filename="../frmmain.ui" line="219"/>
         <source>Front view</source>
-        <translation>Вид спереди</translation>
+        <translation>背视图</translation>
     </message>
     <message>
         <location filename="../frmmain.ui" line="245"/>
         <source>Left view</source>
-        <translation>Вид слева</translation>
+        <translation>左视图</translation>
     </message>
     <message>
         <location filename="../frmmain.ui" line="271"/>
         <source>Fit</source>
-        <translation>Вписать</translation>
+        <translation>合适</translation>
     </message>
     <message>
         <location filename="../frmmain.ui" line="400"/>
         <source>Heightmap settings</source>
-        <translation>Настройки карты высот</translation>
+        <translation>高度设置</translation>
     </message>
     <message>
         <location filename="../frmmain.ui" line="423"/>
         <source>Border:</source>
-        <translation>Границы:</translation>
+        <translation>边界:</translation>
     </message>
     <message>
         <location filename="../frmmain.ui" line="432"/>
@@ -194,7 +194,7 @@
     <message>
         <location filename="../frmmain.ui" line="531"/>
         <source>W:</source>
-        <translation>Ш:</translation>
+        <translation>W:</translation>
     </message>
     <message>
         <location filename="../frmmain.ui" line="524"/>
@@ -206,74 +206,74 @@
     <message>
         <location filename="../frmmain.ui" line="586"/>
         <source>Auto</source>
-        <translation>Авто</translation>
+        <translation>自动</translation>
     </message>
     <message>
         <location filename="../frmmain.ui" line="570"/>
         <source>Show border</source>
-        <translation>Показать границы</translation>
+        <translation>显示边界</translation>
     </message>
     <message>
         <location filename="../frmmain.ui" line="599"/>
         <source>Probe grid:</source>
-        <translation>Сетка зондирования:</translation>
+        <translation>调查网格:</translation>
     </message>
     <message>
         <location filename="../frmmain.ui" line="733"/>
         <source>Zb:</source>
-        <translation>Zн:</translation>
+        <translation>Zb:</translation>
     </message>
     <message>
         <location filename="../frmmain.ui" line="747"/>
         <source>Zt:</source>
-        <translation>Zв:</translation>
+        <translation>Zt:</translation>
     </message>
     <message>
         <location filename="../frmmain.ui" line="758"/>
         <source>Show grid</source>
-        <translation>Показать сетку</translation>
+        <translation>显示网格</translation>
     </message>
     <message>
         <location filename="../frmmain.ui" line="787"/>
         <source>Interpolation grid:</source>
-        <translation>Сетка интерполяции:</translation>
+        <translation>网格内插:</translation>
     </message>
     <message>
         <location filename="../frmmain.ui" line="876"/>
         <source>Type:</source>
-        <translation>Тип:</translation>
+        <translation>类型:</translation>
     </message>
     <message>
         <location filename="../frmmain.ui" line="893"/>
         <source>Bicubic</source>
-        <translation>Бикубический</translation>
+        <translation>立体</translation>
     </message>
     <message>
         <location filename="../frmmain.ui" line="905"/>
         <source>Show</source>
-        <translation>Отобразить</translation>
+        <translation>显示</translation>
     </message>
     <message>
         <location filename="../frmmain.ui" line="946"/>
         <location filename="../frmmain.cpp" line="1516"/>
         <source>Check mode</source>
-        <translation>Режим проверки</translation>
+        <translation>检查模式</translation>
     </message>
     <message>
         <location filename="../frmmain.ui" line="965"/>
         <location filename="../frmmain.cpp" line="1510"/>
         <source>Autoscroll</source>
-        <translation>Автопрокрутка</translation>
+        <translation>主动滚动</translation>
     </message>
     <message>
         <location filename="../frmmain.ui" line="1047"/>
         <source>State</source>
-        <translation>Состояние</translation>
+        <translation>状态</translation>
     </message>
     <message>
         <location filename="../frmmain.ui" line="1257"/>
         <source>Control</source>
-        <translation>Управление</translation>
+        <translation>控制</translation>
     </message>
     <message>
         <source>Probing Z</source>
@@ -943,12 +943,12 @@ Time elapsed: %1</source>
         <location filename="../frmmain.cpp" line="3391"/>
         <source>Can&apos;t open file:
 </source>
-        <translation>Ошибка при открытии файла:
+        <translation>不能打开文件:
 </translation>
     </message>
     <message>
         <source>Sent</source>
-        <translation type="vanished">Отправлена</translation>
+        <translation type="vanished">发出</translation>
     </message>
     <message>
         <location filename="../frmmain.cpp" line="254"/>
@@ -960,53 +960,53 @@ Time elapsed: %1</source>
     <message>
         <location filename="../frmmain.cpp" line="2581"/>
         <source>Untitled</source>
-        <translation>Без имени</translation>
+        <translation>无标题</translation>
     </message>
     <message>
         <source>G-Code files (*.nc *.ncc *.tap *.txt)</source>
-        <translation type="vanished">Файлы G-Code (*.nc *.ncc *.tap *.txt)</translation>
+        <translation type="vanished">G-Code 文件(*.nc *.ncc *.tap *.txt)</translation>
     </message>
     <message>
         <location filename="../frmmain.cpp" line="3127"/>
         <source>Changing grid settings will reset probe data. Continue?</source>
-        <translation>Изменение сетки зондирования приведет к очистке табличных данных. Продолжить?</translation>
+        <translation>更改网格设置将重置探针数据。继续吗?</translation>
     </message>
     <message>
         <source>Connected</source>
-        <translation type="vanished">Подключен</translation>
+        <translation type="vanished">已连接</translation>
     </message>
     <message>
         <location filename="../frmmain.cpp" line="600"/>
         <source>G-code program file was changed. Save?</source>
-        <translation>Файл G-code программы был изменен. Сохранить?</translation>
+        <translation>G-code 编程文件已经修改,是否保存?</translation>
     </message>
     <message>
         <location filename="../frmmain.cpp" line="608"/>
         <source>Heightmap file was changed. Save?</source>
-        <translation>Файл карты высот был изменен. Сохранить?</translation>
+        <translation>形状图已经修改,是否保存?</translation>
     </message>
     <message>
         <location filename="../frmmain.cpp" line="718"/>
         <source>Probe</source>
-        <translation>Зонд</translation>
+        <translation>探头</translation>
     </message>
     <message>
         <location filename="../frmmain.cpp" line="732"/>
         <source>Port opened</source>
-        <translation>Порт открыт</translation>
+        <translation>串口已打开</translation>
     </message>
     <message>
         <source>Processed</source>
-        <translation type="vanished">Обработана</translation>
+        <translation type="vanished">处理</translation>
     </message>
     <message>
         <location filename="../frmmain.cpp" line="1375"/>
         <source>Serial port error </source>
-        <translation>Ошибка последовательного порта </translation>
+        <translation>串口错误 </translation>
     </message>
     <message>
         <source>Buffer/queue: %1 / %2</source>
-        <translation type="vanished">Буфер/очередь: %1 / %2</translation>
+        <translation type="vanished">缓存/队列: %1 / %2</translation>
     </message>
     <message>
         <location filename="../frmmain.cpp" line="2621"/>
@@ -1022,19 +1022,19 @@ Time elapsed: %1</source>
         <location filename="../frmmain.cpp" line="1625"/>
         <location filename="../frmmain.cpp" line="3475"/>
         <source>Open</source>
-        <translation>Открыть</translation>
+        <translation>打开</translation>
     </message>
     <message>
         <source>G-Code files (*.nc;*.ncc;*.tap)</source>
-        <translation type="vanished">Файлы G-Code (*.nc;*.ncc;*.tap)</translation>
+        <translation type="vanished">文件 G-Code (*.nc;*.ncc;*.tap)</translation>
     </message>
     <message>
         <source>In queue</source>
-        <translation type="vanished">В очереди</translation>
+        <translation type="vanished">在队列中</translation>
     </message>
     <message>
         <source>Sended</source>
-        <translation type="vanished">Отправлена</translation>
+        <translation type="vanished">已发送</translation>
     </message>
 </context>
 <context>
@@ -1042,17 +1042,17 @@ Time elapsed: %1</source>
     <message>
         <location filename="../frmsettings.ui" line="14"/>
         <source>Settings</source>
-        <translation>Настройки</translation>
+        <translation>设置</translation>
     </message>
     <message>
         <location filename="../frmsettings.ui" line="83"/>
         <source>Connection</source>
-        <translation>Соединение</translation>
+        <translation>连接</translation>
     </message>
     <message>
         <location filename="../frmsettings.ui" line="91"/>
         <source>Port:</source>
-        <translation>Порт:</translation>
+        <translation>端口:</translation>
     </message>
     <message>
         <location filename="../frmsettings.ui" line="114"/>
@@ -1062,7 +1062,7 @@ Time elapsed: %1</source>
     <message>
         <location filename="../frmsettings.ui" line="125"/>
         <source>Baud:</source>
-        <translation>Скорость:</translation>
+        <translation>波特率:</translation>
     </message>
     <message>
         <location filename="../frmsettings.ui" line="135"/>
@@ -1097,187 +1097,186 @@ Time elapsed: %1</source>
     </message>
     <message>
         <source>Common</source>
-        <translation type="vanished">Общие</translation>
+        <translation type="vanished">普通</translation>
     </message>
     <message>
         <source>Application measurement units:</source>
-        <translation type="vanished">Единицы измерения приложения:</translation>
+        <translation type="vanished">应用测量单位:</translation>
     </message>
     <message>
         <location filename="../frmsettings.ui" line="262"/>
         <source>Machine information</source>
-        <translation>Информация о станке</translation>
+        <translation>机器信息</translation>
     </message>
     <message>
         <location filename="../frmsettings.ui" line="288"/>
         <source>Status query period:</source>
-        <translation>Период опроса:</translation>
+        <translation>状态查询时间:</translation>
     </message>
     <message>
         <source>units:</source>
-        <translation type="vanished">Единицы:</translation>
+        <translation type="vanished">单位:</translation>
     </message>
     <message>
         <location filename="../frmsettings.ui" line="493"/>
         <source>Control</source>
-        <translation>Управление</translation>
+        <translation>控制</translation>
     </message>
     <message>
         <location filename="../frmsettings.ui" line="502"/>
         <source>Probe commands:</source>
-        <translation>Команды щупа:</translation>
+        <translation>探针命令:</translation>
     </message>
     <message>
         <location filename="../frmsettings.ui" line="525"/>
         <source>Safe position commands:</source>
-        <translation>Команды безопасного положения:</translation>
+        <translation>安全定位命令:</translation>
     </message>
     <message>
         <location filename="../frmsettings.ui" line="555"/>
         <source>&quot;Restore origin&quot; moves tool in:</source>
-        <translation>Перемещение по &quot;Восстановить СК&quot; в:</translation>
+        <translation>恢复原点&quot;Восстановить СК&quot; в:</translation>
     </message>
     <message>
         <location filename="../frmsettings.ui" line="568"/>
         <source>Plane</source>
-        <translation>Плоскости</translation>
+        <translation>平面</translation>
     </message>
     <message>
         <location filename="../frmsettings.ui" line="573"/>
         <source>Space</source>
-        <translation>Пространстве</translation>
+        <translation>距离</translation>
     </message>
     <message>
         <location filename="../frmsettings.ui" line="754"/>
         <source>Parser</source>
-        <translation>Парсер</translation>
+        <translation>解析</translation>
     </message>
     <message>
         <source>Arc approximation segment length:</source>
-        <translation type="vanished">Точность аппроксимации дуг:</translation>
+        <translation type="vanished">弧近似段长:</translation>
     </message>
     <message>
         <location filename="../frmsettings.ui" line="862"/>
         <location filename="../frmsettings.ui" line="1371"/>
         <source>Visualizer</source>
-        <translation>Визуализатор</translation>
+        <translation>观察器</translation>
     </message>
     <message>
         <location filename="../frmsettings.ui" line="889"/>
         <source>Line width:</source>
-        <translation>Толщина линий:</translation>
+        <translation>线宽:</translation>
     </message>
     <message>
         <location filename="../frmsettings.ui" line="1072"/>
         <source>Smoothing</source>
-        <translation>Сглаживание</translation>
+        <translation>平滑</translation>
     </message>
     <message>
         <location filename="../frmsettings.ui" line="1058"/>
         <source>Precision:</source>
-        <translation>Точность:</translation>
+        <translation>精度:</translation>
     </message>
     <message>
         <location filename="../frmsettings.ui" line="176"/>
         <source>PLC IP：</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">PLC IP地址:</translation>
     </message>
     <message>
         <location filename="../frmsettings.ui" line="204"/>
         <source>Dividing disc</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">分度盘</translation>
     </message>
     <message>
         <location filename="../frmsettings.ui" line="210"/>
         <source>Divid count:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">分度数</translation>
     </message>
     <message>
         <location filename="../frmsettings.ui" line="239"/>
         <source>Sender</source>
-        <translation>Отправка файла</translation>
+        <translation>发送者</translation>
     </message>
     <message>
         <location filename="../frmsettings.ui" line="245"/>
         <source>Ignore error responses</source>
-        <translation>Игнорировать ошибки при отправке файла</translation>
+        <translation>忽略错误响应</translation>
     </message>
     <message>
         <location filename="../frmsettings.ui" line="252"/>
         <source>Automatically set parser state before sending from selected line</source>
-        <translation>Автоматически настраивать парсер перед отправкой
-с выбранной строки</translation>
+        <translation>在从选定行发送之前自动设置解析器状态</translation>
     </message>
     <message>
         <location filename="../frmsettings.ui" line="320"/>
         <source>mm</source>
-        <translation>мм</translation>
+        <translation>毫米</translation>
     </message>
     <message>
         <location filename="../frmsettings.ui" line="325"/>
         <source>inch</source>
-        <translation>дюйм</translation>
+        <translation>英寸</translation>
     </message>
     <message>
         <location filename="../frmsettings.ui" line="438"/>
         <source>Laser power min.:</source>
-        <translation>Мощность лазера мин.:</translation>
+        <translation>最小激光功率.:</translation>
     </message>
     <message>
         <location filename="../frmsettings.ui" line="602"/>
         <location filename="../frmsettings.ui" line="1262"/>
         <source>User commands</source>
-        <translation>Команды</translation>
+        <translation>用户命令</translation>
     </message>
     <message>
         <location filename="../frmsettings.ui" line="611"/>
         <source>Button 1:</source>
-        <translation>Кнопка 1:</translation>
+        <translation>按钮 1:</translation>
     </message>
     <message>
         <location filename="../frmsettings.ui" line="634"/>
         <source>Button 2:</source>
-        <translation>Кнопка 2:</translation>
+        <translation>按钮 2:</translation>
     </message>
     <message>
         <location filename="../frmsettings.ui" line="657"/>
         <source>Button 3:</source>
-        <translation>Кнопка 3:</translation>
+        <translation>按钮 3:</translation>
     </message>
     <message>
         <location filename="../frmsettings.ui" line="680"/>
         <source>Button 4:</source>
-        <translation>Кнопка 4:</translation>
+        <translation>按钮 4:</translation>
     </message>
     <message>
         <location filename="../frmsettings.ui" line="950"/>
         <source>Program draw mode:</source>
-        <translation>Режим отрисовки:</translation>
+        <translation>程序画模式:</translation>
     </message>
     <message>
         <location filename="../frmsettings.ui" line="957"/>
         <source>Vectors</source>
-        <translation>Векторный</translation>
+        <translation>轨道</translation>
     </message>
     <message>
         <location filename="../frmsettings.ui" line="970"/>
         <source>Raster</source>
-        <translation>Растр</translation>
+        <translation>光栅</translation>
     </message>
     <message>
         <location filename="../frmsettings.ui" line="999"/>
         <source>By &apos;Z&apos;-code</source>
-        <translation>По &apos;Z&apos;-коду</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../frmsettings.ui" line="1012"/>
         <source>By &apos;S&apos;-code</source>
-        <translation>По &apos;S&apos;-коду</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../frmsettings.ui" line="1022"/>
         <source>Grayscale segments</source>
-        <translation>Полутоновое окрашивание</translation>
+        <translation>灰度段</translation>
     </message>
     <message>
         <location filename="../frmsettings.ui" line="1065"/>
@@ -1287,37 +1286,37 @@ Time elapsed: %1</source>
     <message>
         <location filename="../frmsettings.ui" line="1084"/>
         <source>Tool model</source>
-        <translation>Модель фрезы</translation>
+        <translation>刀具模式</translation>
     </message>
     <message>
         <location filename="../frmsettings.ui" line="1239"/>
         <source>Show UI commands</source>
-        <translation>Отображать команды интерфейса пользователя</translation>
+        <translation>显示界面命令行</translation>
     </message>
     <message>
         <location filename="../frmsettings.ui" line="1290"/>
         <source>Overriding</source>
-        <translation>Коррекция</translation>
+        <translation>上位机</translation>
     </message>
     <message>
         <location filename="../frmsettings.ui" line="1300"/>
         <source>Colors</source>
-        <translation>Цвета</translation>
+        <translation>颜色</translation>
     </message>
     <message>
         <location filename="../frmsettings.ui" line="1424"/>
         <source>Normal:</source>
-        <translation>Основной:</translation>
+        <translation>正常:</translation>
     </message>
     <message>
         <location filename="../frmsettings.ui" line="1315"/>
         <source>Toolpath</source>
-        <translation>Траектория</translation>
+        <translation>刀具路径</translation>
     </message>
     <message>
         <location filename="../frmsettings.ui" line="1411"/>
         <source>Drawn:</source>
-        <translation>Выполненная:</translation>
+        <translation>绘制:</translation>
     </message>
     <message>
         <location filename="../frmsettings.ui" line="1385"/>
@@ -1327,31 +1326,31 @@ Time elapsed: %1</source>
     <message>
         <location filename="../frmsettings.ui" line="1341"/>
         <source>Highlight:</source>
-        <translation>Подсветка:</translation>
+        <translation>高亮:</translation>
     </message>
     <message>
         <location filename="../frmsettings.ui" line="1308"/>
         <source>Z-movement:</source>
-        <translation>Z-перемещения:</translation>
+        <translation>Z-移动:</translation>
     </message>
     <message>
         <source>(Used in the visualizer and the procedure of transformation files in accordance with the height map)</source>
-        <translation type="vanished">(Используется визуализатором и процедурой преобразования файлов в соответствии с картой высот)</translation>
+        <translation type="vanished">(在可视化工具中使用并按照程序转换文件的高度图)</translation>
     </message>
     <message>
         <location filename="../frmsettings.ui" line="1348"/>
         <source>Start point:</source>
-        <translation>Начало:</translation>
+        <translation>开始点:</translation>
     </message>
     <message>
         <location filename="../frmsettings.ui" line="1358"/>
         <source>End point:</source>
-        <translation>Конец:</translation>
+        <translation>结束点:</translation>
     </message>
     <message>
         <location filename="../frmsettings.ui" line="1328"/>
         <source>Background:</source>
-        <translation>Фон:</translation>
+        <translation>背景:</translation>
     </message>
     <message>
         <location filename="../frmsettings.ui" line="762"/>
@@ -1360,7 +1359,7 @@ Time elapsed: %1</source>
     </message>
     <message>
         <source>by length (mm)</source>
-        <translation type="vanished">по длине (мм)</translation>
+        <translation type="vanished"> 的长度(mm)</translation>
     </message>
     <message>
         <location filename="../frmsettings.ui" line="831"/>
@@ -1586,7 +1585,7 @@ Time elapsed: %1</source>
     <message>
         <location filename="../frmsettings.ui" line="1090"/>
         <source>Type:</source>
-        <translation>Тип:</translation>
+        <translation>类型:</translation>
     </message>
     <message>
         <location filename="../frmsettings.ui" line="1097"/>
@@ -1606,12 +1605,12 @@ Time elapsed: %1</source>
     <message>
         <location filename="../frmsettings.ui" line="1127"/>
         <source>Angle:</source>
-        <translation>Угол:</translation>
+        <translation>角度:</translation>
     </message>
     <message>
         <location filename="../frmsettings.ui" line="1134"/>
         <source>Length:</source>
-        <translation>Длина:</translation>
+        <translation>长度:</translation>
     </message>
     <message>
         <source>Query state time period:</source>
@@ -1620,34 +1619,34 @@ Time elapsed: %1</source>
     <message>
         <location filename="../frmsettings.ui" line="1232"/>
         <source>Show G-code program commands</source>
-        <translation>Отображать команды G-code программы</translation>
+        <translation>显示G-code 程序命令</translation>
     </message>
     <message>
         <source>GRBL Control</source>
-        <translation type="vanished">Управление GRBL</translation>
+        <translation type="vanished">GRBL控制</translation>
     </message>
     <message>
         <source>Safe Z:</source>
-        <translation type="vanished">Безопасная Z:</translation>
+        <translation type="vanished">安全 Z:</translation>
     </message>
     <message>
         <location filename="../frmsettings.ui" line="356"/>
         <source>Rapid speed:</source>
-        <translation>Ускоренная подача:</translation>
+        <translation>快速 速度:</translation>
     </message>
     <message>
         <location filename="../frmsettings.ui" line="786"/>
         <source>by length</source>
-        <translation>по длине</translation>
+        <translation>从长度</translation>
     </message>
     <message>
         <source>(Used in the visualizer and the procedure of transformation files in accordance with the height map.)</source>
-        <translation type="vanished">(используется визуализатором и процедурой преобразования файлов в соответствии с картой высот)</translation>
+        <translation type="vanished">(在可视化工具中使用并按照程序转换文件的高度图。)</translation>
     </message>
     <message>
         <location filename="../frmsettings.ui" line="1256"/>
         <source>Panels</source>
-        <translation>Панели</translation>
+        <translation>面板</translation>
     </message>
     <message>
         <location filename="../frmsettings.ui" line="703"/>
@@ -1662,25 +1661,25 @@ Time elapsed: %1</source>
     <message>
         <location filename="../frmsettings.ui" line="1283"/>
         <source>Spindle</source>
-        <translation>Шпиндель</translation>
+        <translation>轴</translation>
     </message>
     <message>
         <location filename="../frmsettings.ui" line="1276"/>
         <source>Jog</source>
-        <translation>Перемещение</translation>
+        <translation>点动</translation>
     </message>
     <message>
         <source>Keyboard control</source>
-        <translation type="vanished">Управление с клавиатуры</translation>
+        <translation type="vanished">键盘控制</translation>
     </message>
     <message>
         <location filename="../frmsettings.ui" line="1226"/>
         <source>Console</source>
-        <translation>Консоль</translation>
+        <translation>命令行</translation>
     </message>
     <message>
         <source>Show G-code program commands in console</source>
-        <translation type="vanished">Отображать команды G-code программы в консоли</translation>
+        <translation type="vanished">在命令行显示 G-code 代码</translation>
     </message>
     <message>
         <location filename="../frmsettings.ui" line="1573"/>
@@ -1690,12 +1689,12 @@ Time elapsed: %1</source>
     <message>
         <location filename="../frmsettings.ui" line="1583"/>
         <source>Cancel</source>
-        <translation>Отмена</translation>
+        <translation>取消</translation>
     </message>
     <message>
         <location filename="../frmsettings.cpp" line="626"/>
         <source>Reset settings to default values?</source>
-        <translation>Восстановить значения по-умолчанию?</translation>
+        <translation>复位参数到默认值?</translation>
     </message>
 </context>
 </TS>
