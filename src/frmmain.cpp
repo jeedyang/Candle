@@ -333,6 +333,10 @@ void frmMain::loadSettings()
 
     m_settingsLoading = true;
 
+    m_settings->setPlcIp(set.value("plcIp").toString());
+    m_settings->setPlateCount(set.value("plateCount").toInt());
+    m_settings->setIndexPlateSpeed(set.value("indexPlateSpeed").toDouble());
+
     m_settings->setFontSize(set.value("fontSize", 8).toInt());
     m_settings->setPort(set.value("port").toString());
     m_settings->setBaud(set.value("baud").toInt());
@@ -484,6 +488,10 @@ void frmMain::saveSettings()
 {
     QSettings set(m_settingsFileName, QSettings::IniFormat);
     set.setIniCodec("UTF-8");
+
+    set.setValue("plcIp",m_settings->plcIp());
+    set.setValue("plateCount",m_settings->plateCount());
+    set.setValue("indexPlateSpeed",m_settings->indexPlateSpeed());
 
     set.setValue("port", m_settings->port());
     set.setValue("baud", m_settings->baud());

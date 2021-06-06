@@ -73,7 +73,7 @@ QGroupBox {
           <x>0</x>
           <y>0</y>
           <width>443</width>
-          <height>1593</height>
+          <height>1619</height>
          </rect>
         </property>
         <layout class="QVBoxLayout" name="verticalLayout_4">
@@ -201,19 +201,9 @@ QGroupBox {
          <item>
           <widget class="QGroupBox" name="groupBox_3">
            <property name="title">
-            <string>Dividing disc</string>
+            <string>Index plate</string>
            </property>
            <layout class="QGridLayout" name="gridLayout_8">
-            <item row="0" column="0">
-             <widget class="QLabel" name="label_9">
-              <property name="text">
-               <string>Divid count:</string>
-              </property>
-             </widget>
-            </item>
-            <item row="0" column="1">
-             <widget class="QSpinBox" name="numDivCnt"/>
-            </item>
             <item row="0" column="2">
              <spacer name="horizontalSpacer_9">
               <property name="orientation">
@@ -229,6 +219,42 @@ QGroupBox {
                </size>
               </property>
              </spacer>
+            </item>
+            <item row="0" column="0">
+             <widget class="QLabel" name="label_9">
+              <property name="text">
+               <string>Plate count:</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="1">
+             <widget class="QDoubleSpinBox" name="txtIdxPlateSpeed"/>
+            </item>
+            <item row="1" column="0">
+             <widget class="QLabel" name="label_40">
+              <property name="text">
+               <string>Speed:</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="1">
+             <widget class="QComboBox" name="cboPlateCnt">
+              <item>
+               <property name="text">
+                <string>2</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>3</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>6</string>
+               </property>
+              </item>
+             </widget>
             </item>
            </layout>
           </widget>

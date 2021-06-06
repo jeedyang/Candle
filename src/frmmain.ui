@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>952</width>
+    <width>994</width>
     <height>847</height>
    </rect>
   </property>
@@ -354,11 +354,11 @@ QSlider::handle:horizontal:hover {
              <property name="gridStyle">
               <enum>Qt::DashLine</enum>
              </property>
-             <attribute name="horizontalHeaderHighlightSections">
-              <bool>false</bool>
-             </attribute>
              <attribute name="horizontalHeaderMinimumSectionSize">
               <number>50</number>
+             </attribute>
+             <attribute name="horizontalHeaderHighlightSections">
+              <bool>false</bool>
              </attribute>
              <attribute name="verticalHeaderVisible">
               <bool>false</bool>
@@ -1499,6 +1499,112 @@ QSlider::handle:horizontal:hover {
        </layout>
       </item>
       <item>
+       <layout class="QVBoxLayout" name="verticalLayout_10">
+        <item>
+         <widget class="QGroupBox" name="grpIdxPlate">
+          <property name="title">
+           <string>Index Plate</string>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_2">
+           <property name="leftMargin">
+            <number>0</number>
+           </property>
+           <property name="topMargin">
+            <number>0</number>
+           </property>
+           <property name="rightMargin">
+            <number>0</number>
+           </property>
+           <property name="bottomMargin">
+            <number>0</number>
+           </property>
+           <property name="spacing">
+            <number>0</number>
+           </property>
+           <item row="0" column="0">
+            <widget class="StyledToolButton" name="cmdIdxPlateLast">
+             <property name="minimumSize">
+              <size>
+               <width>44</width>
+               <height>44</height>
+              </size>
+             </property>
+             <property name="toolTip">
+              <string>Last index</string>
+             </property>
+             <property name="text">
+              <string>...</string>
+             </property>
+             <property name="icon">
+              <iconset resource="images.qrc">
+               <normaloff>:/images/last.png</normaloff>:/images/last.png</iconset>
+             </property>
+             <property name="iconSize">
+              <size>
+               <width>30</width>
+               <height>30</height>
+              </size>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="1">
+            <widget class="StyledToolButton" name="cmdIdxPlateHome">
+             <property name="minimumSize">
+              <size>
+               <width>44</width>
+               <height>44</height>
+              </size>
+             </property>
+             <property name="toolTip">
+              <string>Index plate home</string>
+             </property>
+             <property name="text">
+              <string>...</string>
+             </property>
+             <property name="icon">
+              <iconset resource="images.qrc">
+               <normaloff>:/images/target.png</normaloff>:/images/target.png</iconset>
+             </property>
+             <property name="iconSize">
+              <size>
+               <width>30</width>
+               <height>30</height>
+              </size>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="2">
+            <widget class="StyledToolButton" name="cmdIdxPlateNext">
+             <property name="minimumSize">
+              <size>
+               <width>44</width>
+               <height>44</height>
+              </size>
+             </property>
+             <property name="toolTip">
+              <string>Next index</string>
+             </property>
+             <property name="text">
+              <string>...</string>
+             </property>
+             <property name="icon">
+              <iconset resource="images.qrc">
+               <normaloff>:/images/next.png</normaloff>:/images/next.png</iconset>
+             </property>
+             <property name="iconSize">
+              <size>
+               <width>30</width>
+               <height>30</height>
+              </size>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
        <widget class="QSplitter" name="splitPanels">
         <property name="styleSheet">
          <string notr="true">QSplitter::handle {
@@ -1540,9 +1646,9 @@ QSlider::handle:horizontal:hover {
           <property name="geometry">
            <rect>
             <x>0</x>
-            <y>-416</y>
+            <y>0</y>
             <width>228</width>
-            <height>691</height>
+            <height>656</height>
            </rect>
           </property>
           <property name="sizePolicy">
@@ -2615,8 +2721,8 @@ padding-right: 8;</string>
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>952</width>
-     <height>26</height>
+     <width>994</width>
+     <height>23</height>
     </rect>
    </property>
    <widget class="QMenu" name="mnuFile">

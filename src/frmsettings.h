@@ -28,6 +28,12 @@ public:
     void setPort(QString port);
     int baud();
     void setBaud(int baud);
+    QString plcIp();
+    void setPlcIp(QString ip);
+    double indexPlateSpeed();
+    void setIndexPlateSpeed(double speed);
+    int plateCount();
+    void setPlateCount(int cnt);
     double toolDiameter();
     void setToolDiameter(double diameter);
     double toolLength();

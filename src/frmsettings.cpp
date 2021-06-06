@@ -130,6 +130,40 @@ int frmSettings::baud()
     return ui->cboBaud->currentText().toInt();
 }
 
+QString frmSettings::plcIp()
+{
+    return ui->txtPlcIp->text();
+}
+
+void frmSettings::setPlcIp(QString ip)
+{
+    ui->txtPlcIp->setText(ip);
+}
+
+double frmSettings::indexPlateSpeed()
+{
+    return ui->txtIdxPlateSpeed->value();
+}
+
+void frmSettings::setIndexPlateSpeed(double speed)
+{
+    ui->txtIdxPlateSpeed->setValue(speed);
+}
+
+int frmSettings::plateCount()
+{
+    bool ok;
+    int cnt = ui->cboPlateCnt->currentText().toInt(&ok);
+    if (ok)
+        return cnt;
+    return 0;
+}
+
+void frmSettings::setPlateCount(int cnt)
+{
+    ui->cboPlateCnt->setCurrentText(QString::number(cnt));
+}
+
 void frmSettings::setBaud(int baud)
 {
     ui->cboBaud->setCurrentText(QString::number(baud));
