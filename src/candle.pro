@@ -27,6 +27,8 @@ contains(QT_CONFIG, opengles.) {
     target.path = /home/pi
 }
 
+include($${PWD}/snap7/snap7.pri)
+
 TARGET = Candle
 TEMPLATE = app
 VERSION = 1.1.8
