@@ -1,4 +1,4 @@
-// This file is a part of "Candle" application.
+﻿// This file is a part of "Candle" application.
 // Copyright 2015-2016 Hayrullin Denis Ravilevich
 
 #ifndef FRMSETTINGS_H
@@ -28,12 +28,16 @@ public:
     void setPort(QString port);
     int baud();
     void setBaud(int baud);
-    QString plcIp();
-    void setPlcIp(QString ip);
-    double indexPlateSpeed();
-    void setIndexPlateSpeed(double speed);
+
+    QString plcPort();
+    void setPlcPort(QString port);
+    int indexPlateSpeed();
+    void setIndexPlateSpeed(int speed);
     int plateCount();
     void setPlateCount(int cnt);
+    double indexPlateHomeOffset();
+    void setIndexPlateHomeOffset(double offset);
+
     double toolDiameter();
     void setToolDiameter(double diameter);
     double toolLength();

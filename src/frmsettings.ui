@@ -72,8 +72,8 @@ QGroupBox {
          <rect>
           <x>0</x>
           <y>0</y>
-          <width>443</width>
-          <height>1619</height>
+          <width>445</width>
+          <height>1734</height>
          </rect>
         </property>
         <layout class="QVBoxLayout" name="verticalLayout_4">
@@ -173,12 +173,22 @@ QGroupBox {
               <item>
                <widget class="QLabel" name="label_8">
                 <property name="text">
-                 <string>PLC IP：</string>
+                 <string>PLC：</string>
                 </property>
                </widget>
               </item>
               <item>
-               <widget class="QLineEdit" name="txtPlcIp"/>
+               <widget class="QComboBox" name="cboPortPlc">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="editable">
+                 <bool>true</bool>
+                </property>
+               </widget>
               </item>
               <item>
                <spacer name="horizontalSpacer_7">
@@ -227,16 +237,6 @@ QGroupBox {
               </property>
              </widget>
             </item>
-            <item row="1" column="1">
-             <widget class="QDoubleSpinBox" name="txtIdxPlateSpeed"/>
-            </item>
-            <item row="1" column="0">
-             <widget class="QLabel" name="label_40">
-              <property name="text">
-               <string>Speed:</string>
-              </property>
-             </widget>
-            </item>
             <item row="0" column="1">
              <widget class="QComboBox" name="cboPlateCnt">
               <item>
@@ -252,6 +252,55 @@ QGroupBox {
               <item>
                <property name="text">
                 <string>6</string>
+               </property>
+              </item>
+             </widget>
+            </item>
+            <item row="2" column="0">
+             <widget class="QLabel" name="label_40">
+              <property name="text">
+               <string>Speed:</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="0">
+             <widget class="QLabel" name="label_41">
+              <property name="text">
+               <string>Home offset:</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="1">
+             <widget class="QDoubleSpinBox" name="txtIdxPlateHomeOffset">
+              <property name="suffix">
+               <string> °</string>
+              </property>
+              <property name="minimum">
+               <double>-360.000000000000000</double>
+              </property>
+              <property name="maximum">
+               <double>360.000000000000000</double>
+              </property>
+              <property name="singleStep">
+               <double>0.100000000000000</double>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="1">
+             <widget class="QComboBox" name="cboPlateSpeed">
+              <item>
+               <property name="text">
+                <string>slow</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>normal</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>fast</string>
                </property>
               </item>
              </widget>

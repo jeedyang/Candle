@@ -4,13 +4,16 @@
 #
 #-------------------------------------------------
 
-QT       = core gui opengl serialport
+QT       = core gui opengl serialport serialbus
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
+
+
+qtConfig(modbus-serialport): QT += serialport
 
 win32: {
     QT += winextras
     DEFINES += WINDOWS
-    QMAKE_LFLAGS += "-Wl,--large-address-aware"
+    #QMAKE_LFLAGS += "-Wl,--large-address-aware"
     QMAKE_CXXFLAGS_DEBUG += -g3 -pg
     QMAKE_LFLAGS_DEBUG += -pg -lgmon
 }
@@ -27,8 +30,6 @@ contains(QT_CONFIG, opengles.) {
     target.path = /home/pi
 }
 
-include($${PWD}/snap7/snap7.pri)
-
 TARGET = Candle
 TEMPLATE = app
 VERSION = 1.1.8
@@ -40,6 +41,7 @@ DEFINES += APP_VERSION=\\\"$$VERSION\\\"
 TRANSLATIONS += translations/candle_en.ts translations/candle_ru.ts translations/candle_es.ts translations/candle_fr.ts translations/candle_pt.ts translations/candle_zh.ts
 
 SOURCES += main.cpp\
+    frmio.cpp \
         frmmain.cpp \
     frmsettings.cpp \
     frmabout.cpp \
@@ -50,12 +52,14 @@ SOURCES += main.cpp\
     drawers/origindrawer.cpp \
     drawers/shaderdrawable.cpp \
     drawers/tooldrawer.cpp \
+    modbus.cpp \
     parser/arcproperties.cpp \
     parser/gcodeparser.cpp \
     parser/gcodepreprocessorutils.cpp \
     parser/gcodeviewparse.cpp \
     parser/linesegment.cpp \
     parser/pointsegment.cpp \
+    plc.cpp \
     tables/gcodetablemodel.cpp \
     tables/heightmaptablemodel.cpp \
     widgets/colorpicker.cpp \
@@ -71,6 +75,7 @@ SOURCES += main.cpp\
     widgets/comboboxkey.cpp
 
 HEADERS  += frmmain.h \
+    frmio.h \
     frmsettings.h \
     frmabout.h \
     drawers/gcodedrawer.h \
@@ -80,12 +85,14 @@ HEADERS  += frmmain.h \
     drawers/origindrawer.h \
     drawers/shaderdrawable.h \
     drawers/tooldrawer.h \
+    modbus.h \
     parser/arcproperties.h \
     parser/gcodeparser.h \
     parser/gcodepreprocessorutils.h \
     parser/gcodeviewparse.h \
     parser/linesegment.h \
     parser/pointsegment.h \
+    plc.h \
     tables/gcodetablemodel.h \
     tables/heightmaptablemodel.h \
     utils/interpolation.h \
@@ -103,6 +110,7 @@ HEADERS  += frmmain.h \
     widgets/comboboxkey.h
 
 FORMS    += frmmain.ui \
+    frmio.ui \
     frmsettings.ui \
     frmabout.ui \
     widgets/sliderbox.ui

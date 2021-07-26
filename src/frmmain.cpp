@@ -1,4 +1,4 @@
-// This file is a part of "Candle" application.
+﻿// This file is a part of "Candle" application.
 // Copyright 2015-2016 Hayrullin Denis Ravilevich
 
 //#define INITTIME //QTime time; time.start();
@@ -89,6 +89,7 @@ frmMain::frmMain(QWidget *parent) :
     preloadSettings();
 
     m_settings = new frmSettings(this);
+    m_frmIo = new frmIo(&m_plc,this);
     ui->setupUi(this);
 
 #ifdef WINDOWS
@@ -280,6 +281,15 @@ frmMain::frmMain(QWidget *parent) :
     m_timerConnection.start(1000);
     m_timerStateQuery.start();
 
+    connect(ui->cmdIdxPlateLast,SIGNAL(pressed()),this,SLOT(on_cmdIdxPlateLast()));
+    connect(ui->cmdIdxPlateNext,SIGNAL(pressed()),this,SLOT(on_cmdIdxPlateNext()));
+    connect(ui->cmdIdxPlateHome,SIGNAL(pressed()),this,SLOT(on_cmdIdxPlateHome()));
+    connect(ui->cmdIdxPlateEn,SIGNAL(toggled(bool)),this,SLOT(on_cmdIdxPlateEn(bool)));
+    connect(&m_plc,&Plc::hasMessage,[&](QString msg){
+        ui->txtConsole->appendPlainText("[PLC]"+msg);
+    });
+    connectToPlc();
+
     // Handle file drop
     if (qApp->arguments().count() > 1 && isGCodeFile(qApp->arguments().last())) {
         loadFile(qApp->arguments().last());
@@ -333,9 +343,10 @@ void frmMain::loadSettings()
 
     m_settingsLoading = true;
 
-    m_settings->setPlcIp(set.value("plcIp").toString());
+    m_settings->setPlcPort(set.value("plcPort").toString());
     m_settings->setPlateCount(set.value("plateCount").toInt());
     m_settings->setIndexPlateSpeed(set.value("indexPlateSpeed").toDouble());
+    m_settings->setIndexPlateHomeOffset(set.value("indexPlateHomeOffset").toDouble());
 
     m_settings->setFontSize(set.value("fontSize", 8).toInt());
     m_settings->setPort(set.value("port").toString());
@@ -489,9 +500,10 @@ void frmMain::saveSettings()
     QSettings set(m_settingsFileName, QSettings::IniFormat);
     set.setIniCodec("UTF-8");
 
-    set.setValue("plcIp",m_settings->plcIp());
+    set.setValue("plcPort",m_settings->plcPort());
     set.setValue("plateCount",m_settings->plateCount());
     set.setValue("indexPlateSpeed",m_settings->indexPlateSpeed());
+    set.setValue("indexPlateHomeOffset",m_settings->indexPlateHomeOffset());
 
     set.setValue("port", m_settings->port());
     set.setValue("baud", m_settings->baud());
@@ -935,8 +947,22 @@ void frmMain::onSerialPortReadyRead()
                     m_timerStateQuery.stop();
                     m_timerConnection.stop();
 
-                    QMessageBox::information(this, qApp->applicationDisplayName(), tr("Job done.\nTime elapsed: %1")
-                                             .arg(ui->glwVisualizer->spendTime().toString("hh:mm:ss")));
+                    if(m_autoRun){
+                        ui->txtConsole->appendPlainText(tr("Job done.\nTime elapsed: %1")
+                                                        .arg(ui->glwVisualizer->spendTime().toString("hh:mm:ss")));
+                        m_autoRunCount++;
+                        if(m_autoRunCount >= m_settings->plateCount()){
+                            disconnect(this,&frmMain::jobDone,&m_plc,&Plc::nextPlate);
+                            QMessageBox::information(this, qApp->applicationDisplayName(), tr("Auto Job done."));
+                            emit autoRunDone();
+                            on_actionStop_triggered();
+                        }
+                    }else{
+                        QMessageBox::information(this, qApp->applicationDisplayName(), tr("Job done.\nTime elapsed: %1")
+                                                 .arg(ui->glwVisualizer->spendTime().toString("hh:mm:ss")));
+                    }
+
+                    emit jobDone();
 
                     m_timerStateQuery.setInterval(m_settings->queryStateTime());
                     m_timerConnection.start();
@@ -2184,6 +2210,15 @@ void frmMain::on_actServiceSettings_triggered()
     }
 }
 
+
+void frmMain::on_actIo_triggered()
+{
+    m_frmIo->startRefresh();
+    m_frmIo->exec();
+    m_frmIo->stopRefresh();
+}
+
+
 bool buttonLessThan(StyledToolButton *b1, StyledToolButton *b2)
 {
 //    return b1->text().toDouble() < b2->text().toDouble();
@@ -2702,6 +2737,55 @@ void frmMain::on_actAbout_triggered()
     m_frmAbout.exec();
 }
 
+void frmMain::on_actionStart_triggered()
+{
+    auto btn = QMessageBox::information(this,tr("Safety Check") ,tr("It will execute the index plate reset to zero, and then loop to execute G-CODE") ,
+                             QMessageBox::Yes | QMessageBox::No, QMessageBox::No);
+
+    if(btn == QMessageBox::Yes){
+        m_autoRunCount =0;
+        m_autoRun=true;
+        m_plc.indexPlateHome();
+        connect(&m_plc,&Plc::indexPlateHomeDone,this,&frmMain::on_cmdFileSend_clicked);
+        connect(this,&frmMain::jobDone,&m_plc,&Plc::nextPlate);
+        connect(&m_plc,&Plc::nextPlateDone,this,&frmMain::on_cmdFileSend_clicked);
+
+        connect(&m_plc,&Plc::hasError,this,[&](int addr){
+            this->on_actionStop_triggered();
+            ui->txtConsole->appendPlainText(tr("Auto execute interrupt, The problem is PLC : %1").arg(addr));
+        });
+    }
+
+    ui->actionStart->setEnabled(false);
+    ui->actionStop->setEnabled(true);
+
+    ui->grpControl->setEnabled(false);
+    ui->grpIdxPlate->setEnabled(false);
+    ui->splitPanels->setEnabled(false);
+    //ui->cboCommand->setEnabled(false);
+    ui->cmdCommandSend->setEnabled(false);
+}
+
+void frmMain::on_actionStop_triggered()
+{
+    disconnect(&m_plc,&Plc::indexPlateHomeDone,this,&frmMain::on_cmdFileSend_clicked);
+    disconnect(this,&frmMain::jobDone,&m_plc,&Plc::nextPlate);
+    disconnect(&m_plc,&Plc::nextPlateDone,this,&frmMain::on_cmdFileSend_clicked);
+    disconnect(&m_plc,&Plc::hasError,this,0);
+    m_autoRun=false;
+    ui->actionStart->setEnabled(true);
+    ui->actionStop->setEnabled(false);
+
+    ui->grpControl->setEnabled(true);
+    ui->grpIdxPlate->setEnabled(true);
+    ui->splitPanels->setEnabled(true);
+    //ui->cboCommand->setEnabled(true);
+    ui->cmdCommandSend->setEnabled(true);
+
+    ui->txtConsole->appendPlainText(tr("Stop when the current task is complete"));
+}
+
+
 bool frmMain::dataIsEnd(QString data) {
     QStringList ends;
 
@@ -2967,6 +3051,17 @@ void frmMain::updateJogTitle()
                              .arg(ui->cboJogStep->currentText().toDouble() > 0 ? ui->cboJogStep->currentText() : tr("C"))
                              .arg(ui->cboJogFeed->currentText()));
     }
+}
+
+void frmMain::connectToPlc()
+{
+    m_plc.setSeting(m_settings);
+
+   if(m_plc.connect(m_settings->plcPort())==0){
+       ui->txtConsole->appendPlainText("PLC is connected.");
+   }else{
+       ui->txtConsole->appendPlainText("PLC connection fail!");
+   }
 }
 
 void frmMain::on_tblProgram_customContextMenuRequested(const QPoint &pos)
@@ -3984,4 +4079,28 @@ void frmMain::on_cmdStop_clicked()
 {
     m_queue.clear();
     m_serialPort.write(QByteArray(1, char(0x85)));
+}
+
+void frmMain::on_cmdIdxPlateLast()
+{
+    m_plc.lastPlate();
+}
+
+void frmMain::on_cmdIdxPlateNext()
+{
+    m_plc.nextPlate();
+}
+
+void frmMain::on_cmdIdxPlateHome()
+{
+    m_plc.indexPlateHome();
+}
+
+void frmMain::on_cmdIdxPlateEn(bool en)
+{
+    en=!en;
+    ui->cmdIdxPlateHome->setEnabled(en);
+    ui->cmdIdxPlateLast->setEnabled(en);
+    ui->cmdIdxPlateNext->setEnabled(en);
+    m_plc.setIndexPlateEn(en);
 }

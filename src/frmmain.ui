@@ -1521,83 +1521,155 @@ QSlider::handle:horizontal:hover {
            <property name="spacing">
             <number>0</number>
            </property>
-           <item row="0" column="0">
-            <widget class="StyledToolButton" name="cmdIdxPlateLast">
-             <property name="minimumSize">
-              <size>
-               <width>44</width>
-               <height>44</height>
-              </size>
+           <item row="0" column="1">
+            <layout class="QGridLayout" name="gridLayout_9">
+             <property name="horizontalSpacing">
+              <number>8</number>
              </property>
-             <property name="toolTip">
-              <string>Last index</string>
-             </property>
-             <property name="text">
-              <string>...</string>
-             </property>
-             <property name="icon">
-              <iconset resource="images.qrc">
-               <normaloff>:/images/last.png</normaloff>:/images/last.png</iconset>
-             </property>
-             <property name="iconSize">
-              <size>
-               <width>30</width>
-               <height>30</height>
-              </size>
-             </property>
-            </widget>
-           </item>
-           <item row="1" column="1">
-            <widget class="StyledToolButton" name="cmdIdxPlateHome">
-             <property name="minimumSize">
-              <size>
-               <width>44</width>
-               <height>44</height>
-              </size>
-             </property>
-             <property name="toolTip">
-              <string>Index plate home</string>
-             </property>
-             <property name="text">
-              <string>...</string>
-             </property>
-             <property name="icon">
-              <iconset resource="images.qrc">
-               <normaloff>:/images/target.png</normaloff>:/images/target.png</iconset>
-             </property>
-             <property name="iconSize">
-              <size>
-               <width>30</width>
-               <height>30</height>
-              </size>
-             </property>
-            </widget>
-           </item>
-           <item row="0" column="2">
-            <widget class="StyledToolButton" name="cmdIdxPlateNext">
-             <property name="minimumSize">
-              <size>
-               <width>44</width>
-               <height>44</height>
-              </size>
-             </property>
-             <property name="toolTip">
-              <string>Next index</string>
-             </property>
-             <property name="text">
-              <string>...</string>
-             </property>
-             <property name="icon">
-              <iconset resource="images.qrc">
-               <normaloff>:/images/next.png</normaloff>:/images/next.png</iconset>
-             </property>
-             <property name="iconSize">
-              <size>
-               <width>30</width>
-               <height>30</height>
-              </size>
-             </property>
-            </widget>
+             <item row="0" column="0">
+              <widget class="StyledToolButton" name="cmdIdxPlateEn">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="minimumSize">
+                <size>
+                 <width>44</width>
+                 <height>44</height>
+                </size>
+               </property>
+               <property name="toolTip">
+                <string>enabled or disabled plate</string>
+               </property>
+               <property name="text">
+                <string>...</string>
+               </property>
+               <property name="icon">
+                <iconset resource="images.qrc">
+                 <normaloff>:/images/brake.png</normaloff>:/images/brake.png</iconset>
+               </property>
+               <property name="iconSize">
+                <size>
+                 <width>30</width>
+                 <height>30</height>
+                </size>
+               </property>
+               <property name="checkable">
+                <bool>true</bool>
+               </property>
+               <property name="checked">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="1">
+              <widget class="StyledToolButton" name="cmdIdxPlateHome">
+               <property name="enabled">
+                <bool>false</bool>
+               </property>
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="minimumSize">
+                <size>
+                 <width>44</width>
+                 <height>44</height>
+                </size>
+               </property>
+               <property name="toolTip">
+                <string>Index plate home</string>
+               </property>
+               <property name="text">
+                <string>...</string>
+               </property>
+               <property name="icon">
+                <iconset resource="images.qrc">
+                 <normaloff>:/images/search_for_home2.png</normaloff>:/images/search_for_home2.png</iconset>
+               </property>
+               <property name="iconSize">
+                <size>
+                 <width>30</width>
+                 <height>30</height>
+                </size>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="2">
+              <widget class="StyledToolButton" name="cmdIdxPlateLast">
+               <property name="enabled">
+                <bool>false</bool>
+               </property>
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="minimumSize">
+                <size>
+                 <width>44</width>
+                 <height>44</height>
+                </size>
+               </property>
+               <property name="toolTip">
+                <string>Last index</string>
+               </property>
+               <property name="text">
+                <string>...</string>
+               </property>
+               <property name="icon">
+                <iconset resource="images.qrc">
+                 <normaloff>:/images/last.png</normaloff>:/images/last.png</iconset>
+               </property>
+               <property name="iconSize">
+                <size>
+                 <width>30</width>
+                 <height>30</height>
+                </size>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="3">
+              <widget class="StyledToolButton" name="cmdIdxPlateNext">
+               <property name="enabled">
+                <bool>false</bool>
+               </property>
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="minimumSize">
+                <size>
+                 <width>44</width>
+                 <height>44</height>
+                </size>
+               </property>
+               <property name="toolTip">
+                <string>Next index</string>
+               </property>
+               <property name="text">
+                <string>...</string>
+               </property>
+               <property name="icon">
+                <iconset resource="images.qrc">
+                 <normaloff>:/images/next.png</normaloff>:/images/next.png</iconset>
+               </property>
+               <property name="iconSize">
+                <size>
+                 <width>30</width>
+                 <height>30</height>
+                </size>
+               </property>
+              </widget>
+             </item>
+            </layout>
            </item>
           </layout>
          </widget>
@@ -1647,8 +1719,8 @@ QSlider::handle:horizontal:hover {
            <rect>
             <x>0</x>
             <y>0</y>
-            <width>228</width>
-            <height>656</height>
+            <width>232</width>
+            <height>706</height>
            </rect>
           </property>
           <property name="sizePolicy">
@@ -2722,7 +2794,7 @@ padding-right: 8;</string>
      <x>0</x>
      <y>0</y>
      <width>994</width>
-     <height>23</height>
+     <height>21</height>
     </rect>
    </property>
    <widget class="QMenu" name="mnuFile">
@@ -2751,6 +2823,7 @@ padding-right: 8;</string>
      <string>&amp;Service</string>
     </property>
     <addaction name="actServiceSettings"/>
+    <addaction name="actIo"/>
    </widget>
    <widget class="QMenu" name="mnuHelp">
     <property name="title">
@@ -2758,8 +2831,16 @@ padding-right: 8;</string>
     </property>
     <addaction name="actAbout"/>
    </widget>
+   <widget class="QMenu" name="menuAuto">
+    <property name="title">
+     <string>Auto</string>
+    </property>
+    <addaction name="actionStart"/>
+    <addaction name="actionStop"/>
+   </widget>
    <addaction name="mnuFile"/>
    <addaction name="mnuService"/>
+   <addaction name="menuAuto"/>
    <addaction name="mnuHelp"/>
   </widget>
   <action name="actFileOpen">
@@ -2805,6 +2886,27 @@ padding-right: 8;</string>
   <action name="actFileSaveTransformedAs">
    <property name="text">
     <string>Save &amp;transformed as...</string>
+   </property>
+  </action>
+  <action name="actIo">
+   <property name="text">
+    <string>IO</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+I</string>
+   </property>
+  </action>
+  <action name="actionStart">
+   <property name="text">
+    <string>Start</string>
+   </property>
+  </action>
+  <action name="actionStop">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Stop</string>
    </property>
   </action>
  </widget>
@@ -2934,12 +3036,12 @@ padding-right: 8;</string>
    <slot>setDisabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>858</x>
-     <y>813</y>
+     <x>972</x>
+     <y>1120</y>
     </hint>
     <hint type="destinationlabel">
-     <x>493</x>
-     <y>576</y>
+     <x>514</x>
+     <y>546</y>
     </hint>
    </hints>
   </connection>
@@ -2950,12 +3052,12 @@ padding-right: 8;</string>
    <slot>setDisabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>786</x>
-     <y>804</y>
+     <x>972</x>
+     <y>1120</y>
     </hint>
     <hint type="destinationlabel">
-     <x>741</x>
-     <y>431</y>
+     <x>922</x>
+     <y>749</y>
     </hint>
    </hints>
   </connection>
@@ -2966,12 +3068,12 @@ padding-right: 8;</string>
    <slot>setDisabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>807</x>
-     <y>799</y>
+     <x>972</x>
+     <y>1120</y>
     </hint>
     <hint type="destinationlabel">
-     <x>773</x>
-     <y>504</y>
+     <x>972</x>
+     <y>836</y>
     </hint>
    </hints>
   </connection>
@@ -2982,12 +3084,12 @@ padding-right: 8;</string>
    <slot>setDisabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>799</x>
-     <y>803</y>
+     <x>972</x>
+     <y>1120</y>
     </hint>
     <hint type="destinationlabel">
-     <x>456</x>
-     <y>790</y>
+     <x>477</x>
+     <y>649</y>
     </hint>
    </hints>
   </connection>

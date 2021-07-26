@@ -1,4 +1,4 @@
-// This file is a part of "Candle" application.
+﻿// This file is a part of "Candle" application.
 // Copyright 2015-2016 Hayrullin Denis Ravilevich
 
 #ifndef FRMMAIN_H
@@ -39,6 +39,9 @@
 
 #include "frmsettings.h"
 #include "frmabout.h"
+#include "frmio.h"
+
+#include "plc.h"
 
 #ifdef WINDOWS
     #include <QtWinExtras/QtWinExtras>
@@ -113,6 +116,7 @@ private slots:
     void on_cmdFileSend_clicked();
     void onTableCellChanged(QModelIndex i1, QModelIndex i2);
     void on_actServiceSettings_triggered();
+    void on_actIo_triggered();
     void on_actFileOpen_triggered();
     void on_cmdCommandSend_clicked();
     void on_cmdHome_clicked();
@@ -193,6 +197,17 @@ private slots:
 
     void on_cmdStop_clicked();
 
+    void on_cmdIdxPlateLast();
+
+    void on_cmdIdxPlateNext();
+
+    void on_cmdIdxPlateHome();
+
+    void on_cmdIdxPlateEn(bool en);
+
+    void on_actionStart_triggered();
+    void on_actionStop_triggered();
+
 protected:
     void showEvent(QShowEvent *se);
     void hideEvent(QHideEvent *he);
@@ -235,6 +250,7 @@ private:
 
     frmSettings *m_settings;
     frmAbout m_frmAbout;
+    frmIo* m_frmIo;
 
     QString m_settingsFileName;
     QString m_programFileName;
@@ -322,6 +338,11 @@ private:
     QStringList m_recentFiles;
     QStringList m_recentHeightmaps;
 
+    //plc
+    Plc m_plc;
+    bool m_autoRun=false;
+    int m_autoRunCount=0;
+
     void loadFile(QString fileName);
     void loadFile(QList<QString> data);
     void clearTable();
@@ -377,6 +398,12 @@ private:
     void updateOverride(SliderBox *slider, int value, char command);
     void jogStep();
     void updateJogTitle();
+
+    void connectToPlc();
+
+signals:
+    void autoRunDone();
+    void jobDone();
 };
 
 #endif // FRMMAIN_H

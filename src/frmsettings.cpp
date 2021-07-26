@@ -1,4 +1,4 @@
-// This file is a part of "Candle" application.
+﻿// This file is a part of "Candle" application.
 // Copyright 2015-2016 Hayrullin Denis Ravilevich
 
 #include "frmsettings.h"
@@ -130,24 +130,24 @@ int frmSettings::baud()
     return ui->cboBaud->currentText().toInt();
 }
 
-QString frmSettings::plcIp()
+QString frmSettings::plcPort()
 {
-    return ui->txtPlcIp->text();
+    return ui->cboPortPlc->currentText();
 }
 
-void frmSettings::setPlcIp(QString ip)
+void frmSettings::setPlcPort(QString port)
 {
-    ui->txtPlcIp->setText(ip);
+    ui->cboPortPlc->setCurrentText(port);
 }
 
-double frmSettings::indexPlateSpeed()
+int frmSettings::indexPlateSpeed()
 {
-    return ui->txtIdxPlateSpeed->value();
+    return ui->cboPlateSpeed->currentIndex();
 }
 
-void frmSettings::setIndexPlateSpeed(double speed)
+void frmSettings::setIndexPlateSpeed(int speed)
 {
-    ui->txtIdxPlateSpeed->setValue(speed);
+    ui->cboPlateSpeed->setCurrentIndex(speed);
 }
 
 int frmSettings::plateCount()
@@ -162,6 +162,16 @@ int frmSettings::plateCount()
 void frmSettings::setPlateCount(int cnt)
 {
     ui->cboPlateCnt->setCurrentText(QString::number(cnt));
+}
+
+double frmSettings::indexPlateHomeOffset()
+{
+    return ui->txtIdxPlateHomeOffset->value();
+}
+
+void frmSettings::setIndexPlateHomeOffset(double offset)
+{
+   ui->txtIdxPlateHomeOffset->setValue(offset);
 }
 
 void frmSettings::setBaud(int baud)
@@ -631,6 +641,7 @@ void frmSettings::searchPorts()
     foreach (QSerialPortInfo info ,QSerialPortInfo::availablePorts()) {
 //        ui->cboPort->addItem(info.portName());
         ui->cboPort->insertItem(0, info.portName());
+        ui->cboPortPlc->insertItem(0, info.portName());
     }
 }
 
